@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="K9i-lQ-bDH">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EXk-MP-KcO">
+            <objects>
+                <viewController id="K9i-lQ-bDH" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dtR-dD-QaC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NEWS APP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mHz-NA-xz6">
+                                <rect key="frame" x="20" y="144" width="374" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="G2f-94-oYq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="30"/>
+                                <color key="textColor" red="0.35883820059999999" green="0.60832172630000003" blue="0.57254755499999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="by Mohamed Ikhram Khan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3nQ-Nz-tNG">
+                                <rect key="frame" x="20" y="851" width="374" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="bJv-n9-R7z"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="SAq-Qd-Tdf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="SAq-Qd-Tdf" firstAttribute="trailing" secondItem="3nQ-Nz-tNG" secondAttribute="trailing" constant="20" id="HBv-qb-wQR"/>
+                            <constraint firstItem="3nQ-Nz-tNG" firstAttribute="leading" secondItem="SAq-Qd-Tdf" secondAttribute="leading" constant="20" id="K0p-ra-l6X"/>
+                            <constraint firstItem="mHz-NA-xz6" firstAttribute="top" secondItem="SAq-Qd-Tdf" secondAttribute="top" constant="100" id="Yae-5J-L0q"/>
+                            <constraint firstItem="SAq-Qd-Tdf" firstAttribute="trailing" secondItem="mHz-NA-xz6" secondAttribute="trailing" constant="20" id="mCb-P1-rUC"/>
+                            <constraint firstItem="mHz-NA-xz6" firstAttribute="leading" secondItem="SAq-Qd-Tdf" secondAttribute="leading" constant="20" id="ugh-ee-Z8P"/>
+                            <constraint firstItem="3nQ-Nz-tNG" firstAttribute="bottom" secondItem="SAq-Qd-Tdf" secondAttribute="bottom" constant="10" id="x9t-Ym-MKp"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nrL-ad-vNK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-331" y="-19"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
