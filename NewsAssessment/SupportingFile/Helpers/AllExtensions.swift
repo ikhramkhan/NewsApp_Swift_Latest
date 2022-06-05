@@ -224,7 +224,7 @@ extension UIViewController {
         button1.setTitleColor(UIColor.darkGray, for: .normal)
         button1.setTitleColor(UIColor.darkGray, for: .selected)
         
-        button1.addTarget(target, action: #selector(firstButtonAction(sender:)), for: .touchUpInside)
+        button1.addTarget(target, action: #selector(didTaplanguageButton(sender:)), for: .touchUpInside)
         
         button1.isSelected = fisrtButtonSelected
         
@@ -260,7 +260,7 @@ extension UIViewController {
         
     }
     
-    @objc open func firstButtonAction(sender: UIButton) {
+    @objc open func didTaplanguageButton(sender: UIButton) {
     }
     
     @objc func didTapFilterButton(sender: UIButton){

@@ -33,11 +33,11 @@ class NewsViewController: UIViewController,UIPopoverPresentationControllerDelega
         self.title = "All News"
         Localize.setCurrentLanguage("en")
         addNavigationBarButtonsWith(fisrtButtonDefaultTitle: "Ar", fisrtButtonSelectedTitle: "En", target: self)
-       
+        
         setupTableView()
         getAllNews(page: page)
         
-     
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -105,7 +105,7 @@ class NewsViewController: UIViewController,UIPopoverPresentationControllerDelega
         }, startIndex: page, currentListCount: newsArray.count) { [weak self] in
             //noMoreDataCallback
             DispatchQueue.main.async {
-              self?.newsListTableView.switchRefreshFooter(to: .noMoreData)
+                self?.newsListTableView.switchRefreshFooter(to: .noMoreData)
             }
         }
     }
@@ -132,31 +132,17 @@ extension NewsViewController: UITableViewDataSource, UITableViewDelegate{
 //MARK:Navigation Bar button Action
 extension NewsViewController
 {
-    @objc override public func firstButtonAction(sender: UIButton) {
+    @objc override public func didTaplanguageButton(sender: UIButton) {
         
-     
+        
         sender.isSelected = !sender.isSelected
         if sender.isSelected{
-            self.view.setLanguage(lang: "ar")
-            Localize.setCurrentLanguage("ar")
-            newsArray.removeAll()
-            page = 0
-            getAllNews(page: page)
-
-           
-
+            
+            updateLanguage(lang: "ar")
+            
         }else
         {
-            
-            
-            self.view.setLanguage(lang: "en")
-            Localize.setCurrentLanguage("en")
-            Localize.resetCurrentLanguageToDefault()
-            newsArray.removeAll()
-            page = 0
-            getAllNews(page: page)
-
-            
+            updateLanguage(lang: "en")
             
         }
         addNavigationBarButtonsWith(fisrtButtonDefaultTitle: "Ar", fisrtButtonSelectedTitle: "En",fisrtButtonSelected: sender.isSelected, target: self)
@@ -164,10 +150,19 @@ extension NewsViewController
         self.title = "All News".localized()
     }
     
-    @objc override public func didTapFilterButton(sender: UIButton) {
-  
+    func updateLanguage(lang:String) {
+        self.view.setLanguage(lang: lang)
+        Localize.setCurrentLanguage(lang)
+        newsArray.removeAll()
+        page = 0
+        getAllNews(page: page)
+        
     }
-
+    
+    @objc override public func didTapFilterButton(sender: UIButton) {
+        
+    }
+    
     @objc override public func didTapColorButton(sender: UIButton){
         let popoverVC = storyboard?.instantiateViewController(withIdentifier: "colorPickerPopover") as! ColorPickerViewController
         popoverVC.modalPresentationStyle = .popover
@@ -181,7 +176,7 @@ extension NewsViewController
         }
         present(popoverVC, animated: true, completion: nil)
     }
-
+    
 }
 
 //MARK: App Color Theme Settings
@@ -193,15 +188,14 @@ extension NewsViewController {
     
     //Navigation Bar Color picker Delegate
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
-        // Return no adaptive presentation style, use default presentation behaviour
         return .none
     }
     
     func setNavigationBarColor (_ color: UIColor) {
         let appearance = UINavigationBarAppearance()
-          appearance.backgroundColor = color
+        appearance.backgroundColor = color
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
         navigationController?.navigationBar.standardAppearance = appearance
     }
-   
+    
 }

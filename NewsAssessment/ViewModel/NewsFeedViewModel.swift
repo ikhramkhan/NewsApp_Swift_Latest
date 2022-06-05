@@ -49,15 +49,13 @@ class NewsFeedViewModel{
             self?.sendArticlesToViewController(newsResponse: nil)
         }
     }
-    
-    
-    
-    private func sendArticlesToViewController(newsResponse: NewsResponse?) {
-        guard let newsResponsex = newsResponse else { news.value = [];
-            return }
-        aggregationCount = newsResponsex.totalResults ?? 0
-        news.value = newsResponsex.articles ?? []
-    }
+     
+   private func sendArticlesToViewController(newsResponse: NewsResponse?) {
+    guard let newsResponsex = newsResponse else { news.value = [];
+        return }
+    aggregationCount = newsResponsex.totalResults ?? 0
+    news.value = newsResponsex.articles ?? []
+}
 }
 
 
